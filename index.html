@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SISTEMA GRÁFICA RÁPIDA </title>
+    <link rel="shortcut icon" type="imagex/png" href="./Design-sem-nome-_1_.ico">
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="nav">
+            <a href="#" id="logo"> <img src="./Design sem nome (1).png" alt="logo"> </a>
+            <button class="hamburger"></button>
+            <ul class="nav-list">
+                <li><a href="https://joseantonio13.github.io/joseantonio13.github.oi/">Melhorar Imagens</a></li>
+                <li><a href="https://joseantonio13.github.io/curriculo/"> Faça seu Currículo </a></li>
+                <li><a href="https://joseantonio13.github.io/temp/">Temperatura atual</a></li>
+             
+
+            </ul>
+        </nav>
+
+      
+
+    </header>
+    
+    <main>
+
+        <h1> Bem vindo(a) </h1>
+        <h2> Com esse site você consegue fazer alguns serviços direto do seu computador/smarthphone.</h2>
+        <img id="print"src="https://images.pexels.com/photos/7014413/pexels-photo-7014413.jpeg?auto=compress&cs=tinysrgb&w=600" alt="print">
+    </main>
+
+    <style>
+        
+        #print{
+            width: 35%;
+            margin: 22px;
+            padding: 50px;
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.063);
+        }
+        h1,
+        h2 {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+            background-image: linear-gradient(to left top, #0d66eb, #0778ee, #2589ef, #4299ee, #5fa8eb);
+            background-size: cover;
+            color: white;
+            text-shadow: rgb(0, 0, 0, 00.1px) 0.1px 0 3px;
+        }
+
+        main {
+            background-color: rgb(255, 255, 255);
+            max-width: 1000px;
+            height: 100vh;
+            align-items: center;
+            padding: 2px;
+            margin: auto;
+            color: #000000;
+            border-radius: 20px;
+            box-shadow: rgb(0, 0, 0, 47px) 1px 3px;
+            text-align: center;
+        }
+
+        a {
+            font-family: sans-serif;
+            text-decoration: none;
+
+        }
+
+        .header {
+            background: rgb(210, 203, 212);
+            padding-inline: 16px;
+        }
+
+        .nav {
+            max-width: 1280px;
+            height: 70px;
+            margin-inline: auto;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 20px;
+            border-radius: 35px;
+            margin-bottom: 5px;
+        }
+
+
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            list-style: square;
+        }
+
+        .nav-list a {
+            font-size: 18px;
+            color: #000000;
+            padding-block: 16px;
+        }
+
+        .hero {
+            height: calc(100vh - 70px);
+            background: center / cover no-repeat url("./bg.jpg");
+        }
+
+        .hamburger {
+            display: none;
+            border: none;
+            background: none;
+            border-top: 3px solid #fff;
+            cursor: pointer;
+        }
+
+        .hamburger::after,
+        .hamburger::before {
+            content: " ";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #1684f2;
+            margin-top: 5px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 750px) {
+            .hamburger {
+                display: block;
+                z-index: 1;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgb(202, 229, 244);
+                clip-path: circle(100px at 90% -15%);
+                transition: 1s ease-out;
+
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                gap: 0;
+
+                pointer-events: none;
+            }
+
+            .nav-list a {
+                font-size: 24px;
+                opacity: 0;
+            }
+
+            .nav-list li:nth-child(1) a {
+                transition: 0.5s 0.2s;
+            }
+
+            .nav-list li:nth-child(2) a {
+                transition: 0.5s 0.4s;
+            }
+
+            .nav-list li:nth-child(3) a {
+                transition: 0.5s 0.6s;
+            }
+
+            /* Estilos ativos */
+
+            .nav.active .nav-list {
+                clip-path: circle(1500px at 90% -15%);
+                pointer-events: all;
+            }
+
+            .nav.active .nav-list a {
+                opacity: 1;
+            }
+
+            .nav.active .hamburger {
+                position: fixed;
+                top: 26px;
+                right: 16px;
+                border-top-color: transparent;
+            }
+
+            .nav.active .hamburger::before {
+                transform: rotate(135deg);
+            }
+
+            .nav.active .hamburger::after {
+                transform: rotate(-135deg);
+                top: -7px;
+            }
+        }
+
+
+        #logo {
+            display: flex;
+            height: 90px;
+        }
+    </style>
+
+
+    <script>
+
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.querySelector(".nav");
+
+        hamburger.addEventListener("click", () => nav.classList.toggle("active"));  
+    </script>
+</body>
+
+</html>
